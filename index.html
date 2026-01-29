@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Rick Staco en Studio - Picolo Studio Montréal">
+    <meta property="og:description" content="Rick Staco enregistre à Picolo Studio - Auteur, Compositeur, Arrangeur, Band Leader">
+    <meta property="og:type" content="website">
+    <title>Rick Staco en Studio - Picolo Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .infographic {
+            background: white;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '🎵';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: -50px;
+            right: -30px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 3em;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.3em;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .milestone {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .milestone-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .milestone h2 {
+            color: #333;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .milestone p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .credentials {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 1.1em !important;
+            margin-top: 10px;
+        }
+
+        .studio-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .studio-info h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .studio-info .location {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .studio-info .tagline {
+            font-size: 1.1em;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .celebration-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 600px) {
+            .celebration-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .celebration-item {
+            text-align: center;
+            padding: 25px 20px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .celebration-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .celebration-item .emoji {
+            font-size: 50px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .celebration-item h4 {
+            color: #333;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .footer-message {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .footer-message h3 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-message p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .music-notes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            font-size: 40px;
+        }
+
+        .note {
+            animation: noteFloat 2s ease-in-out infinite;
+        }
+
+        .note:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .note:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes noteFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic">
+        <div class="header">
+            <h1>RICK STACO EN STUDIO</h1>
+            <p>Picolo Studio • Montréal</p>
+        </div>
+
+        <div class="content">
+            <div class="milestone">
+                <div class="milestone-icon">🎹</div>
+                <h2>De ton piano au studio professionnel!</h2>
+                <p class="credentials">Auteur • Compositeur • Arrangeur • Band Leader</p>
+            </div>
+
+            <div class="studio-info">
+                <h3>🎙️ Picolo Studio</h3>
+                <div class="location">📍 Montréal, QC</div>
+                <div class="tagline">Là où tes compositions prennent vie</div>
+            </div>
+
+            <div class="celebration-grid">
+                <div class="celebration-item">
+                    <span class="emoji">🎹</span>
+                    <h4>Piano &<br>DAW</h4>
+                </div>
+                <div class="celebration-item">
+                    <span class="emoji">✍️</span>
+                    <h4>Composition<br>Originale</h4>
+                </div>
+                <div class="celebration-item">
+                    <span class="emoji">🎼</span>
+                    <h4>Arrangement<br>Professionnel</h4>
+                </div>
+                <div class="celebration-item">
+                    <span class="emoji">🎺</span>
+                    <h4>Band<br>Leadership</h4>
+                </div>
+            </div>
+
+            <div class="music-notes">
+                <span class="note">♪</span>
+                <span class="note">♫</span>
+                <span class="note">♪</span>
+            </div>
+
+            <div class="footer-message">
+                <h3>De tes compositions à l'enregistrement! 🌟</h3>
+                <p>Du piano et du DAW jusqu'au studio professionnel – chaque note que tu as composée, chaque arrangement que tu as créé, prend maintenant une nouvelle dimension. Rick, ton talent de compositeur et de band leader va briller à Picolo Studio. C'est TON moment de créer quelque chose d'extraordinaire!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
